@@ -1,5 +1,3 @@
-import MountainImage from "../assets/mountain.png";
-
 function Root() {
   return (
     <div className="h-full bg-center bg-cover bg-mountain">

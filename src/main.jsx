@@ -3,7 +3,8 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root.jsx";
-import Layout from "./routes/vans/layout.jsx";
+import Layout from "./components/layout.jsx";
+import Vans from "./routes/vans/vans.jsx";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Root />,
+      },
+      {
+        path: "/vans",
+        element: <Vans />,
       },
     ],
   },
