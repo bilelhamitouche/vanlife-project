@@ -10,6 +10,17 @@ export default {
       gridTemplateRows: {
         layout: "auto 1fr auto",
       },
+      fontFamily: {
+        sans: [
+          "Geist",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+          "Apple Color Emoji",
+          "Segoe UI Symbol",
+          "Noto Color Emoji",
+        ],
+      },
     },
   },
   plugins: [],
