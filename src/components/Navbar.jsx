@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -8,21 +8,33 @@ function Navbar() {
         className="mr-auto text-2xl font-bold text-black">
         #VANLIFE
       </Link>
-      <Link
+      <NavLink
         to="/host"
-        className="font-bold text-gray-700">
+        className={({ isActive }) =>
+          isActive
+            ? "text-black font-bold underline"
+            : "text-gray-700 hover:underline"
+        }>
         Host
-      </Link>
-      <Link
+      </NavLink>
+      <NavLink
         to="/about"
-        className="font-bold text-gray-700">
+        className={({ isActive }) =>
+          isActive
+            ? "text-black font-bold underline"
+            : "text-gray-700 hover:underline"
+        }>
         About
-      </Link>
-      <Link
+      </NavLink>
+      <NavLink
         to="/vans"
-        className="font-bold text-gray-700">
+        className={({ isActive }) =>
+          isActive
+            ? "text-black font-bold underline"
+            : "text-gray-700 hover:underline"
+        }>
         Vans
-      </Link>
+      </NavLink>
     </nav>
   );
 }
