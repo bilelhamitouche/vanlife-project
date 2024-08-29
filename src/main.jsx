@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root.jsx";
 import Layout from "./components/layout.jsx";
 import Vans from "./routes/vans/vans.jsx";
+import About from "./routes/About.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Root />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/vans",
