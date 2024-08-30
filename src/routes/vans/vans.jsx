@@ -1,5 +1,41 @@
+import { useEffect, useState } from "react";
 
 function Vans() {
+  const [vans, setVans] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function getVans() {
+      try {
+        setLoading(true);
+        const response = await fetch("/api/vans/");
+        const data = await response.json();
+        setVans(data.vans);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getVans();
+  }, []);
+
+  if (error) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <h1 className="text-3xl font-bold text-red-500">{error}</h1>
+      </div>
+    );
+  }
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center">
+        <h1 className="text-3xl font-bold">...Loading</h1>
+      </div>
+    );
+  }
   return (
     <div className="flex flex-col gap-8 p-8">
       <h1 className="text-3xl font-bold">Explore our van options</h1>
@@ -17,6 +53,11 @@ function Vans() {
           Clear filters
         </button>
       </div>
+      <ul className="grid grid-cols-1 gap-8 place-items-center sm:grid-cols-2">
+        {vans.map(van => (
+          <p>{van.name}</p>
+        ))}
+      </ul>
     </div>
   );
 }
