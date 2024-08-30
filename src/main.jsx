@@ -6,6 +6,7 @@ import Root from "./routes/root.jsx";
 import Layout from "./components/layout.jsx";
 import Vans from "./routes/vans/vans.jsx";
 import About from "./routes/About.jsx";
+import "./server";
 
 const router = createBrowserRouter([
   {
