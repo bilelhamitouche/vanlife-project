@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Card from "../../components/Card";
+import { Link } from "react-router-dom";
 
 function Vans() {
   const [vans, setVans] = useState([]);
@@ -55,7 +57,15 @@ function Vans() {
       </div>
       <ul className="grid grid-cols-1 gap-8 place-items-center sm:grid-cols-2">
         {vans.map(van => (
-          <p>{van.name}</p>
+          <Link to={van.id}>
+            <Card
+              key={van.id}
+              name={van.name}
+              imageUrl={van.imageUrl}
+              price={van.price}
+              type={van.type}
+            />
+          </Link>
         ))}
       </ul>
     </div>
