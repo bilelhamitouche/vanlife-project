@@ -24,6 +24,10 @@ const router = createBrowserRouter([
         path: "/vans",
         element: <Vans />,
       },
+      {
+        path: "/vans/:vanId",
+        element: <h1>Hello van page</h1>,
+      },
     ],
   },
 ]);
